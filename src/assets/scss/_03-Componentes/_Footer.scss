@@ -1,0 +1,312 @@
+/* ========================================================= */
+/* _Footer.scss - PIRULA TEQUEÑOS - FOOTER */
+/* VERSIÓN SIMPLE Y COHERENTE CON LA PÁGINA */
+/* ========================================================= */
+
+.footer-pirula {
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  background: #f8f8f8;
+  padding: 60px 20px 20px;
+}
+
+/* =========================================================
+   FRASE DE IMPACTO - NEGRO CON TEXTO AMARILLO
+   ========================================================= */
+.frase-impacto {
+  background: #1e1e1e;
+  padding: 30px 20px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+  
+  .frase-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .frase-icon {
+    color: #ffb300;
+    font-size: 2.5rem;
+  }
+  
+  .frase-texto {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+}
+
+/* =========================================================
+   GRID DE 3 COLUMNAS
+   ========================================================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 50px;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* =========================================================
+   COLUMNAS
+   ========================================================= */
+.footer-col {
+  h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.3rem;
+    color: #c62828;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #ffb300;
+      border-radius: 2px;
+    }
+  }
+}
+
+/* =========================================================
+   COLUMNA 1 - LOGO
+   ========================================================= */
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  
+  .logo-icon {
+    font-size: 3rem;
+    color: #c62828;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+  
+  .logo-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    color: #1e1e1e;
+    line-height: 1;
+  }
+  
+  .logo-sub {
+    font-size: 0.9rem;
+    color: #c62828;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+
+.footer-desc {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffb300;
+  color: #1e1e1e;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  
+  svg {
+    color: #c62828;
+  }
+}
+
+/* =========================================================
+   COLUMNA 2 - ENLACES
+   ========================================================= */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    margin-bottom: 12px;
+    
+    a {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      display: inline-block;
+      
+      &:hover {
+        color: #c62828;
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+/* =========================================================
+   COLUMNA 3 - CONTACTO
+   ========================================================= */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  
+  .contact-icon {
+    font-size: 1.2rem;
+    color: #c62828;
+    min-width: 24px;
+  }
+  
+  a, span {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #c62828;
+    }
+  }
+  
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =========================================================
+   BANNER DE ENVÍOS - AMARILLO CON TEXTO NEGRO
+   ========================================================= */
+.envio-banner {
+  background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%);
+  padding: 15px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  
+  .envio-icon {
+    font-size: 1.5rem;
+    color: #c62828;
+  }
+  
+  span {
+    font-weight: 700;
+    color: #1e1e1e;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   BOTTOM - REDES Y COPYRIGHT
+   ========================================================= */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(198, 40, 40, 0.1);
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .redes-sociales {
+    display: flex;
+    gap: 15px;
+    
+    .red-social {
+      width: 40px;
+      height: 40px;
+      background: #c62828;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: #ffb300;
+        color: #1e1e1e;
+        transform: translateY(-3px);
+      }
+    }
+  }
+  
+  .copyright {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    
+    .separator {
+      color: #c62828;
+    }
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+  }
+}
+
+/* =========================================================
+   RESPONSIVE EXTRA
+   ========================================================= */
+@media (max-width: 768px) {
+  .footer-col {
+    text-align: center;
+    
+    h3::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  .footer-logo {
+    align-items: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .footer-badge {
+    margin: 0 auto;
+  }
+}

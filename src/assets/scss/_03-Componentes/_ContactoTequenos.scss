@@ -1,0 +1,927 @@
+/* ========================================================= */
+/* _ContactoTequenos.scss - PIRULA TEQUEÑOS - CONTACTO */
+/* CON NUEVO COLOR #8b4242, LOGO Y ANIMACIONES */
+/* ========================================================= */
+
+.contacto-pirula {
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    background: #f8f8f8;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* =========================================================
+     BOTONES FLOTANTES DE COMPARTIR (mejorados)
+     ========================================================= */
+  .floating-share-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    
+    @media (max-width: 768px) {
+      bottom: 20px;
+      right: 20px;
+      gap: 10px;
+    }
+    
+    .float-btn {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      
+      @media (max-width: 768px) {
+        width: 45px;
+        height: 45px;
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s ease;
+      }
+      
+      &:hover::before {
+        left: 100%;
+      }
+      
+      svg {
+        font-size: 1.8rem;
+        
+        @media (max-width: 768px) {
+          font-size: 1.4rem;
+        }
+      }
+      
+      &.whatsapp-float {
+        background: #25D366;
+        color: white;
+        
+        &:hover {
+          transform: scale(1.1) translateY(-5px);
+          box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+      }
+      
+      &.share-float {
+        background: #8b4242;
+        color: white;
+        
+        &:hover {
+          transform: scale(1.1) translateY(-5px);
+          box-shadow: 0 10px 25px rgba(139, 66, 66, 0.4);
+        }
+      }
+    }
+  }
+  
+  /* =========================================================
+     HERO SECTION - CON NUEVO COLOR
+     ========================================================= */
+  .contacto-hero {
+    position: relative;
+    min-height: 400px;
+    background: linear-gradient(135deg, #8b4242 0%, #6b3232 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="20" cy="20" r="5" fill="white"/><circle cx="80" cy="30" r="8" fill="white"/></svg>');
+      background-size: 60px 60px;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    
+    .hero-logo {
+      margin-bottom: 30px;
+      
+      .hero-logo-image {
+        height: 80px;
+        width: auto;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 12px 30px;
+        border-radius: 60px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        
+        @media (min-width: 768px) {
+          height: 100px;
+          padding: 15px 35px;
+        }
+      }
+    }
+    
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      
+      @media (min-width: 768px) {
+        font-size: 4rem;
+      }
+      
+      .title-white {
+        color: white;
+      }
+      
+      .title-yellow {
+        color: #ffb300;
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: white;
+      opacity: 0.95;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      padding: 10px 25px;
+      border-radius: 50px;
+      color: white;
+      
+      .badge-icon {
+        color: #ffb300;
+        font-size: 1.3rem;
+        
+        &.pulse {
+          animation: pulse 2s infinite;
+        }
+      }
+      
+      span {
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  
+  /* =========================================================
+     DECORACIÓN (como en Home)
+     ========================================================= */
+  .contacto-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    
+    .deco-line {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #8b4242, transparent);
+      
+      @media (min-width: 768px) {
+        width: 120px;
+      }
+    }
+    
+    .deco-icon {
+      font-size: 2.5rem;
+      color: #8b4242;
+      animation: rotate 8s linear infinite;
+    }
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* =========================================================
+     INFO CARDS - CON NUEVO COLOR
+     ========================================================= */
+  .info-cards {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .info-card {
+      background: white;
+      padding: 35px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border-bottom: 4px solid transparent;
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(139, 66, 66, 0.15);
+        border-bottom-color: #8b4242;
+      }
+      
+      .card-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 2rem;
+        color: white;
+        transition: all 0.3s ease;
+        
+        &.whatsapp { background: #25D366; }
+        &.telefono { background: #8b4242; }
+        &.email { background: #ffb300; }
+        &.ubicacion { background: #1e1e1e; }
+        
+        &:hover {
+          transform: scale(1.1) rotate(5deg);
+        }
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        color: #1e1e1e;
+      }
+      
+      p {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .card-link {
+        color: #8b4242;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          color: #ffb300;
+          text-decoration: underline;
+        }
+      }
+      
+      .card-text {
+        color: #1e1e1e;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /* =========================================================
+     GRID PRINCIPAL - 2 COLUMNAS
+     ========================================================= */
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 380px;
+    }
+    
+    /* COLUMNA IZQUIERDA - FORMULARIO */
+    .formulario-col {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      
+      .form-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 5px;
+        
+        .form-icon {
+          font-size: 2rem;
+          color: #ffb300;
+          animation: pulse 2s infinite;
+        }
+        
+        h2 {
+          font-family: 'Anton', sans-serif;
+          font-size: 2.2rem;
+          margin: 0;
+          
+          .highlight {
+            color: #8b4242;
+          }
+        }
+      }
+      
+      .form-subtitle {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 1rem;
+      }
+    }
+    
+    .contacto-form {
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+        
+        @media (min-width: 768px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      .form-group {
+        margin-bottom: 15px;
+        
+        &.full-width {
+          grid-column: 1 / -1;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: 600;
+          color: #1e1e1e;
+          font-size: 0.9rem;
+        }
+        
+        input, select, textarea {
+          width: 100%;
+          padding: 14px;
+          border: 2px solid #e0e0e0;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          font-family: 'Barlow', sans-serif;
+          transition: all 0.3s ease;
+          
+          &:focus {
+            outline: none;
+            border-color: #8b4242;
+            box-shadow: 0 0 0 3px rgba(139, 66, 66, 0.1);
+          }
+          
+          &:hover {
+            border-color: #ffb300;
+          }
+        }
+        
+        textarea {
+          resize: vertical;
+        }
+      }
+      
+      .form-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+        input {
+          width: auto;
+        }
+        
+        label {
+          font-size: 0.9rem;
+          color: #666;
+        }
+      }
+      
+      .btn-enviar {
+        width: 100%;
+        padding: 16px;
+        background: #8b4242;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          transition: left 0.5s ease;
+        }
+        
+        &:hover:not(:disabled) {
+          background: #6b3232;
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(139, 66, 66, 0.3);
+          
+          &::before {
+            left: 100%;
+          }
+        }
+        
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        .btn-icon {
+          font-size: 1.2rem;
+          animation: pulse 2s infinite;
+        }
+      }
+      
+      .error-mensaje {
+        color: #8b4242;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+    
+    /* COLUMNA DERECHA - HORARIOS Y UBICACIÓN */
+    .info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .horarios-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      
+      .horarios-icon {
+        width: 70px;
+        height: 70px;
+        background: #ffb300;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        
+        svg {
+          font-size: 2rem;
+          color: #1e1e1e;
+          animation: pulse 2s infinite;
+        }
+      }
+      
+      h3 {
+        font-family: 'Anton', sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        color: #1e1e1e;
+      }
+      
+      .horarios-list {
+        margin-bottom: 30px;
+        
+        .horario-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 12px 0;
+          border-bottom: 1px solid #f0f0f0;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          .dia {
+            font-weight: 600;
+            color: #1e1e1e;
+          }
+          
+          .hora {
+            color: #8b4242;
+            font-weight: 600;
+          }
+        }
+      }
+      
+      .redes-sociales {
+        border-top: 2px solid #f0f0f0;
+        padding-top: 25px;
+        
+        h4 {
+          font-size: 1rem;
+          margin-bottom: 15px;
+          color: #666;
+        }
+        
+        .redes-icons {
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          
+          .red-social {
+            width: 45px;
+            height: 45px;
+            background: #f8f8f8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b4242;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              background: #8b4242;
+              color: white;
+              transform: translateY(-3px) scale(1.1);
+            }
+          }
+        }
+      }
+    }
+    
+    /* TARJETA DE UBICACIÓN MEJORADA */
+    .ubicacion-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      
+      .ubicacion-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        
+        .ubicacion-icon {
+          font-size: 2.5rem;
+          color: #ffb300;
+          
+          &.pulse {
+            animation: pulse 2s infinite;
+          }
+        }
+        
+        h3 {
+          font-family: 'Anton', sans-serif;
+          font-size: 1.5rem;
+          color: #1e1e1e;
+          margin: 0;
+        }
+      }
+      
+      .direccion {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1e1e1e;
+        margin-bottom: 5px;
+      }
+      
+      .ciudad {
+        color: #666;
+        margin-bottom: 25px;
+        font-size: 1rem;
+      }
+      
+      .mapa-preview {
+        margin-bottom: 25px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        
+        iframe {
+          display: block;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+      }
+      
+      .acciones-mapa {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        
+        .btn-mapa {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 12px;
+          border: none;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          &:first-child {
+            background: #8b4242;
+            color: white;
+            
+            &:hover {
+              background: #6b3232;
+              transform: translateY(-2px);
+            }
+          }
+          
+          &.compartir {
+            background: #25D366;
+            color: white;
+            
+            &:hover {
+              background: #128C7E;
+              transform: translateY(-2px);
+            }
+          }
+          
+          svg {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* =========================================================
+     CTA MAYORISTAS MEJORADO
+     ========================================================= */
+  .mayoristas-cta {
+    background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%);
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><circle cx="20" cy="20" r="5" fill="white"/><circle cx="80" cy="30" r="8" fill="white"/></svg>');
+      background-size: 60px 60px;
+    }
+    
+    .cta-icon {
+      font-size: 4rem;
+      color: #8b4242;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      
+      &.pulse {
+        animation: pulse 2s infinite;
+      }
+    }
+    
+    h3 {
+      font-size: 2.2rem;
+      color: #1e1e1e;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+      
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+    
+    p {
+      font-size: 1.2rem;
+      color: #1e1e1e;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .btn-mayoristas {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1e1e1e;
+      color: white;
+      padding: 18px 50px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s ease;
+      }
+      
+      &:hover {
+        background: #8b4242;
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        
+        &::before {
+          left: 100%;
+        }
+      }
+    }
+    
+    .cta-stars {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      z-index: 1;
+      
+      .star {
+        color: rgba(139, 66, 66, 0.3);
+        font-size: 1.5rem;
+        animation: pulse 2s infinite;
+        
+        &:nth-child(2) {
+          animation-delay: 0.3s;
+        }
+        
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+      }
+    }
+  }
+  
+  /* =========================================================
+     ANIMACIONES
+     ========================================================= */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.9; }
+  }
+  
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+  @media (max-width: 768px) {
+    .contacto-hero {
+      min-height: 350px;
+      padding: 60px 15px;
+      
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-logo-image {
+        height: 50px !important;
+      }
+    }
+    
+    .contacto-grid {
+      .formulario-col {
+        padding: 25px;
+        
+        h2 {
+          font-size: 1.8rem;
+        }
+      }
+      
+      .horarios-card, .ubicacion-card {
+        padding: 25px;
+      }
+      
+      .acciones-mapa {
+        flex-direction: column;
+        
+        .btn-mapa {
+          width: 100%;
+        }
+      }
+    }
+    
+    .mayoristas-cta {
+      padding: 50px 15px;
+      
+      h3 {
+        font-size: 1.5rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .btn-mayoristas {
+        padding: 14px 30px;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-header {
+      flex-direction: column;
+      text-align: center;
+      
+      h2 {
+        font-size: 1.5rem !important;
+      }
+    }
+    
+    .horario-item {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+    }
+    
+    .floating-share-buttons {
+      bottom: 15px;
+      right: 15px;
+      
+      .float-btn {
+        width: 40px;
+        height: 40px;
+        
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }

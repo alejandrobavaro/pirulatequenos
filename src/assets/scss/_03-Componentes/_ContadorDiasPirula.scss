@@ -1,0 +1,561 @@
+/* ========================================================= */
+/* _ContadorDiasPirula.scss - CONTADOR APERTURA PIRULA */
+/* ANCHO COMPLETO - MISMA ESTÉTICA DE LA PÁGINA */
+/* ========================================================= */
+
+.contador-pirula-fullwidth {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    min-height: 600px;
+  }
+}
+
+/* =========================================================
+   SLIDER DE FONDO
+   ========================================================= */
+.contador-background-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.5s ease-in-out;
+  z-index: 1;
+  
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 66, 66, 0.7) 0%, rgba(107, 50, 50, 0.8) 100%);
+    z-index: 2;
+  }
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+.contador-content-full {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  
+  @media (min-width: 768px) {
+    padding: 80px 40px;
+  }
+}
+
+/* =========================================================
+   DECORACIÓN SUPERIOR (como en Home)
+   ========================================================= */
+.contador-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  
+  .deco-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffb300, transparent);
+    
+    @media (min-width: 768px) {
+      width: 100px;
+    }
+  }
+  
+  .deco-icon {
+    font-size: 2rem;
+    color: #ffb300;
+    animation: rotate 8s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+.contador-logo-container {
+  margin-bottom: 30px;
+  
+  .contador-logo {
+    height: 70px;
+    width: auto;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+    border-radius: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    
+    @media (min-width: 768px) {
+      height: 90px;
+      padding: 12px 35px;
+    }
+    
+    &:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+/* =========================================================
+   BADGE DE APERTURA
+   ========================================================= */
+.apertura-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 12px 30px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  
+  .badge-icon {
+    color: #ffb300;
+    font-size: 1.3rem;
+    
+    &.pulse {
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  span {
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    
+    @media (min-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+.contador-main-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+  
+  .title-white {
+    color: white;
+  }
+  
+  .title-highlight {
+    color: #ffb300;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '✨';
+      position: absolute;
+      top: -15px;
+      right: -30px;
+      font-size: 1.8rem;
+      animation: float 3s infinite;
+    }
+    
+    &::before {
+      content: '✨';
+      position: absolute;
+      bottom: -15px;
+      left: -30px;
+      font-size: 1.8rem;
+      animation: float 3s infinite reverse;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* =========================================================
+   GRID DEL CONTADOR
+   ========================================================= */
+.contador-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+  
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+}
+
+.contador-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contador-circulo {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border: 3px solid #ffb300;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    border-width: 4px;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: shine 4s infinite;
+  }
+  
+  &:hover {
+    transform: scale(1.05);
+    border-color: white;
+    box-shadow: 0 15px 40px rgba(255, 179, 0, 0.3);
+  }
+  
+  .contador-numero {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+    
+    @media (min-width: 992px) {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+@keyframes shine {
+  0% { transform: rotate(0deg) translateY(0); }
+  100% { transform: rotate(360deg) translateY(0); }
+}
+
+.contador-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffb300;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  padding: 5px 10px;
+  border-radius: 30px;
+  
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    padding: 6px 15px;
+  }
+}
+
+/* =========================================================
+   INFORMACIÓN ADICIONAL (MESES Y SEMANAS)
+   ========================================================= */
+.info-adicional {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.info-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  
+  .chip-icon {
+    color: #ffb300;
+    font-size: 1.3rem;
+    animation: pulse 2s infinite;
+  }
+  
+  span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    
+    @media (min-width: 768px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/* =========================================================
+   FECHA DESTACADA
+   ========================================================= */
+.fecha-destacada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  
+  .fecha-star {
+    color: #ffb300;
+    font-size: 1.3rem;
+    animation: pulse 2s infinite;
+    
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(3) { animation-delay: 0.5s; }
+  }
+  
+  span {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px 0 #8b4242;
+    background: rgba(255, 179, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 2px solid #ffb300;
+    
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      padding: 12px 35px;
+    }
+  }
+}
+
+/* =========================================================
+   BOTONES DE ACCIÓN
+   ========================================================= */
+.contador-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-accion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 60px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    
+    &:hover {
+      background: #128C7E;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+    }
+  }
+  
+  &.btn-compartir {
+    background: #ffb300;
+    color: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(255, 179, 0, 0.3);
+    
+    &:hover {
+      background: #ff8f00;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 179, 0, 0.4);
+    }
+  }
+}
+
+/* =========================================================
+   BANNER DE ABIERTO
+   ========================================================= */
+.abierto-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 179, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  border-radius: 60px;
+  border: 2px solid #ffb300;
+  margin-top: 20px;
+  
+  .banner-icon {
+    font-size: 2rem;
+    color: #ffb300;
+    animation: pulse 2s infinite;
+  }
+  
+  p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .contador-main-title {
+    font-size: 2.2rem;
+  }
+  
+  .contador-circulo .contador-numero {
+    font-size: 2rem;
+  }
+  
+  .fecha-destacada span {
+    font-size: 1.3rem;
+    padding: 8px 20px;
+  }
+  
+  .btn-accion {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  .contador-logo {
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contador-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .contador-circulo .contador-numero {
+    font-size: 1.5rem;
+  }
+  
+  .contador-label {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  
+  .fecha-destacada span {
+    font-size: 1rem;
+    padding: 5px 15px;
+  }
+  
+  .info-chip {
+    padding: 8px 15px;
+    
+    .chip-icon {
+      font-size: 1rem;
+    }
+    
+    span {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .apertura-badge {
+    padding: 8px 20px;
+    
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}
